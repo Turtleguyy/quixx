@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h3 {
+    margin: 0 0 3px;
+    padding: 0 5px 2px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    font-size: 1.25em;
+    font-weight: 100;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.board {
+    position: relative;
+    padding: 20px;
+    background: #eee;
+    touch-action: manipulation;
+}
+
+.notice {
+    top: 0;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    position: absolute;
+    width: calc((100% / 11) + 2em + 21px);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px 4px 0 0;
+    pointer-events: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.color {
+    z-index: 1;
+    position: relative;
+    padding: 12px 5px 12px 12px;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+.red {
+    background: #e7153b;
+}
+
+.red .number, .red .lock {
+    background: #fbcdd6;
+    color: #e7153b;
+}
+
+.yellow {
+    background: #ffc400;
+}
+
+.yellow .number, .yellow .lock {
+    background: #fff3cc;
+    color: #ffc400;
+}
+
+.green {
+    background: #3cac2c;
+}
+
+.green .number, .green .lock {
+    background: #beedb7;
+    color: #3cac2c;
+}
+
+.blue {
+    background: #1a61b3;
+}
+
+.blue .number, .blue .lock {
+    background: #a7caf2;
+    color: #1a61b3;
+}
+
+.number, .lock {
+    z-index: 2;
+    position: relative;
+    height: 2em;
+    margin: 3px;
+    flex: 1;
+    font-size: 1.5em;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 2em;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background 200ms ease;
+}
+
+.number i, .lock i {
+    top: 50%;
+    right: 50%;
+    position: absolute;
+    transform: translate(50%, -50%);
+}
+
+.number i {
+    display: none;
+    color: black;
+}
+
+.lock {
+    z-index: 1;
+    width: 2em;
+    margin-left: 10px;
+    flex: none;
+    border-radius: 50%;
+}
+
+.lock [class$="lock"] {
+    display: none;
+}
+
+.lock::before {
+    top: calc(50% - 2px);
+    right: 100%;
+    position: absolute;
+    width: 15px;
+    height: 4px;
+    content: '';
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.color input[type="checkbox"] {
+    display: none;
+}
+
+.color input[type="checkbox"]:checked + label, .color input[type="checkbox"]:checked ~ label {
+    background: white;
+}
+
+.color input[type="checkbox"]:checked + label span {
+    display: none;
+}
+
+.color input[type="checkbox"]:checked + label i {
+    display: block;
+}
+
+.color input[type="checkbox"]:checked[id$="-lock"] + label {
+    z-index: 3;
+}
+
+.color input[type="checkbox"]:checked[id$="-lock"] + label [class*="-unlock"] {
+    display: none;
+}
+
+.color input[type="checkbox"]:checked[id$="-lock"] + label [class*="-lock"] {
+    display: block;
+}
+
+.color input[type="checkbox"]:checked[id$="-lock"] + label::before {
+    width: 100vw;
+}
+
+.scoring {
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.scoring form {
+    text-align: center;
+}
+
+@media all and (orientation: portrait) {
+    .number, .lock {
+        font-size: 1em;
+    }
+    .notice {
+        font-size: 0.5em;
+    }
+    .scoring {
+        align-items: flex-start;
+    }
+}
+
+footer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: Avenir, Verdana, 'Helvetica Neue', sans-serif;
+    font-style: italic;
+    opacity: 0.4;
+}
+
+footer a {
+    text-decoration: none;
+}

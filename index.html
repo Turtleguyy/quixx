@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quixx Online</title>
+    <link rel="stylesheet" href="style.css">
+    <script
+        src="https://kit.fontawesome.com/ca00d01854.js"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="board">
+        <div class="notice">At least 5 <i class="fa-solid fa-xmark"></i>'s</div>
+        <div class="red color">
+          <input id="red-lock" type="checkbox" />
+          <label class="lock" for="red-lock">
+              <i class="fa-solid fa-unlock-alt"></i>
+              <i class="fa-solid fa-lock"></i>
+          </label>
+
+          <input id="red-two" type="checkbox" />
+          <label class="number" for="red-two">
+              <span>2</span>
+              <i class="fa-solid fa-xmark"></i>
+          </label>
+
+          <input id="red-three" type="checkbox" />
+          <label class="number" for="red-three">
+              <span>3</span>
+              <i class="fa-solid fa-xmark"></i>
+          </label>
+
+          <input id="red-four" type="checkbox" />
+          <label class="number" for="red-four">
+              <span>4</span>
+              <i class="fa-solid fa-xmark"></i>
+          </label>
+
+          <input id="red-five" type="checkbox" />
+          <label class="number" for="red-five">
+              <span>5</span>
+              <i class="fa-solid fa-xmark"></i>
+          </label>
+
+          <input id="red-six" type="checkbox" />
+          <label class="number" for="red-six">
+              <span>6</span>
+              <i class="fa-solid fa-xmark"></i>
+          </label>
+
+          <input id="red-seven" type="checkbox" />
+          <label class="number" for="red-seven">
+              <span>7</span>
+              <i class="fa-solid fa-xmark"></i>
+          </label>
+
+          <input id="red-eight" type="checkbox" />
+          <label class="number" for="red-eight">
+              <span>8</span>
+              <i class="fa-solid fa-xmark"></i>
+          </label>
+
+          <input id="red-nine" type="checkbox" />
+          <label class="number" for="red-nine">
+              <span>9</span>
+              <i class="fa-solid fa-xmark"></i>
+          </label>
+
+          <input id="red-ten" type="checkbox" />
+          <label class="number" for="red-ten">
+              <span>10</span>
+              <i class="fa-solid fa-xmark"></i>
+          </label>
+
+          <input id="red-eleven" type="checkbox" />
+          <label class="number" for="red-eleven">
+              <span>11</span>
+              <i class="fa-solid fa-xmark"></i>
+          </label>
+
+          <input id="red-twelve" type="checkbox" />
+          <label class="number" for="red-twelve">
+              <span>12</span>
+              <i class="fa-solid fa-xmark"></i>
+          </label>
+        </div>
+
+        <div class="yellow color">
+            <input id="yellow-lock" type="checkbox" />
+            <label class="lock" for="yellow-lock">
+                <i class="fa-solid fa-unlock-alt"></i>
+                <i class="fa-solid fa-lock"></i>
+            </label>
+
+            <input id="yellow-two" type="checkbox" />
+            <label class="number" for="yellow-two">
+                <span>2</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="yellow-three" type="checkbox" />
+            <label class="number" for="yellow-three">
+                <span>3</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="yellow-four" type="checkbox" />
+            <label class="number" for="yellow-four">
+                <span>4</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="yellow-five" type="checkbox" />
+            <label class="number" for="yellow-five">
+                <span>5</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="yellow-six" type="checkbox" />
+            <label class="number" for="yellow-six">
+                <span>6</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="yellow-seven" type="checkbox" />
+            <label class="number" for="yellow-seven">
+                <span>7</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="yellow-eight" type="checkbox" />
+            <label class="number" for="yellow-eight">
+                <span>8</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="yellow-nine" type="checkbox" />
+            <label class="number" for="yellow-nine">
+                <span>9</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="yellow-ten" type="checkbox" />
+            <label class="number" for="yellow-ten">
+                <span>10</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="yellow-eleven" type="checkbox" />
+            <label class="number" for="yellow-eleven">
+                <span>11</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="yellow-twelve" type="checkbox" />
+            <label class="number" for="yellow-twelve">
+                <span>12</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+        </div>
+
+        <div class="green color">
+            <input id="green-lock" type="checkbox" />
+            <label class="lock" for="green-lock">
+                <i class="fa-solid fa-unlock-alt"></i>
+                <i class="fa-solid fa-lock"></i>
+            </label>
+
+            <input id="green-two" type="checkbox" />
+            <label class="number" for="green-two">
+                <span>2</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="green-three" type="checkbox" />
+            <label class="number" for="green-three">
+                <span>3</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="green-four" type="checkbox" />
+            <label class="number" for="green-four">
+                <span>4</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="green-five" type="checkbox" />
+            <label class="number" for="green-five">
+                <span>5</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="green-six" type="checkbox" />
+            <label class="number" for="green-six">
+                <span>6</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="green-seven" type="checkbox" />
+            <label class="number" for="green-seven">
+                <span>7</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="green-eight" type="checkbox" />
+            <label class="number" for="green-eight">
+                <span>8</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="green-nine" type="checkbox" />
+            <label class="number" for="green-nine">
+                <span>9</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="green-ten" type="checkbox" />
+            <label class="number" for="green-ten">
+                <span>10</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="green-eleven" type="checkbox" />
+            <label class="number" for="green-eleven">
+                <span>11</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="green-twelve" type="checkbox" />
+            <label class="number" for="green-twelve">
+                <span>12</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+        </div>
+
+        <div class="blue color">
+            <input id="blue-lock" type="checkbox" />
+            <label class="lock" for="blue-lock">
+                <i class="fa-solid fa-unlock-alt"></i>
+                <i class="fa-solid fa-lock"></i>
+            </label>
+
+            <input id="blue-two" type="checkbox" />
+            <label class="number" for="blue-two">
+                <span>2</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="blue-three" type="checkbox" />
+            <label class="number" for="blue-three">
+                <span>3</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="blue-four" type="checkbox" />
+            <label class="number" for="blue-four">
+                <span>4</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="blue-five" type="checkbox" />
+            <label class="number" for="blue-five">
+                <span>5</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="blue-six" type="checkbox" />
+            <label class="number" for="blue-six">
+                <span>6</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="blue-seven" type="checkbox" />
+            <label class="number" for="blue-seven">
+                <span>7</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="blue-eight" type="checkbox" />
+            <label class="number" for="blue-eight">
+                <span>8</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="blue-nine" type="checkbox" />
+            <label class="number" for="blue-nine">
+                <span>9</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="blue-ten" type="checkbox" />
+            <label class="number" for="blue-ten">
+                <span>10</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="blue-eleven" type="checkbox" />
+            <label class="number" for="blue-eleven">
+                <span>11</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+
+            <input id="blue-twelve" type="checkbox" />
+            <label class="number" for="blue-twelve">
+                <span>12</span>
+                <i class="fa-solid fa-xmark"></i>
+            </label>
+        </div>
+    </div>
+
+    <div class="scoring">
+        <button class="new">New Game</button>
+        <form class="strikes">
+            <h3>Penalties</h3>
+            <input id="strike-1" type="checkbox"></input>
+            <input id="strike-2" type="checkbox"></input>
+            <input id="strike-3" type="checkbox"></input>
+            <input id="strike-4" type="checkbox"></input>
+        </form>
+        <div class="total">
+            <h3>Total</h3>
+            <h2>0</h2>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by <a href="https://zacharynicoll.com/">Zachary Nicoll</a> for funzies. Not affiliated with Gamewright or Quixx.</p>
+    </footer>
+</body>
+</html>

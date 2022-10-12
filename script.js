@@ -9,10 +9,10 @@ $(function () {
         var blue = $(".blue .number").prev("input:checked").length;
         var strikes = $(".strikes").find("input:checked").length;
 
-        if ($(".red .lock + input:checked").length) red += 1;
-        if ($(".yellow .lock + input:checked").length) yellow += 1;
-        if ($(".green .lock + input:checked").length) green += 1;
-        if ($(".blue .lock + input:checked").length) blue += 1;
+        if ($("#red-lock").prop("checked")) {red += 1};
+        if ($("#yellow-lock").prop("checked")) yellow += 1;
+        if ($("#green-lock").prop("checked")) green += 1;
+        if ($("#blue-lock").prop("checked")) blue += 1;
 
         red = red > 0 ? values[red - 1] : 0;
         yellow = yellow > 0 ? values[yellow - 1] : 0;

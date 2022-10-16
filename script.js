@@ -38,7 +38,7 @@ $(function () {
 
     var onChange = function (event) {
         var checkbox = event.currentTarget;
-        if ($(checkbox).prev().hasClass("lock")) {
+        if ($(checkbox).next().hasClass("lock") || $(checkbox).next().hasClass("last-number")) {
             if (
                 checkbox.checked &&
                 $(checkbox).nextAll("input:checked").length < 5

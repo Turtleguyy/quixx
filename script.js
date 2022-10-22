@@ -38,10 +38,22 @@ $(function () {
 
     var onChange = function (event) {
         var checkbox = event.currentTarget;
-        if ($(checkbox).next().hasClass("lock") || $(checkbox).next().hasClass("last-number")) {
+        // Only allow last number to be selected if there are at least five numbers filled in
+        if ($(checkbox).next().hasClass("last-number")) {
             if (
                 checkbox.checked &&
                 $(checkbox).nextAll("input:checked").length < 5
+            ) {
+                checkbox.checked = false;
+                return false;
+            }
+        }
+
+        // Only allow lock to be selected if the last number has been selected
+        if ($(checkbox).next().hasClass("lock")) {
+            if (
+                checkbox.checked &&
+                $(checkbox).next().next().prop("checked") == false
             ) {
                 checkbox.checked = false;
                 return false;

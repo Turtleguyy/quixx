@@ -9,10 +9,10 @@ $(function () {
         var blue = $(".blue .number").prev("input:checked").length;
         var strikes = $(".strikes").find("input:checked").length;
 
-        if ($(".red .lock + input:checked").length) red += 1;
-        if ($(".yellow .lock + input:checked").length) yellow += 1;
-        if ($(".green .lock + input:checked").length) green += 1;
-        if ($(".blue .lock + input:checked").length) blue += 1;
+        if ($("#red-lock").prop("checked")) {red += 1};
+        if ($("#yellow-lock").prop("checked")) yellow += 1;
+        if ($("#green-lock").prop("checked")) green += 1;
+        if ($("#blue-lock").prop("checked")) blue += 1;
 
         red = red > 0 ? values[red - 1] : 0;
         yellow = yellow > 0 ? values[yellow - 1] : 0;
@@ -38,10 +38,22 @@ $(function () {
 
     var onChange = function (event) {
         var checkbox = event.currentTarget;
-        if ($(checkbox).prev().hasClass("lock")) {
+        // Only allow last number to be selected if there are at least five numbers filled in
+        if ($(checkbox).next().hasClass("last-number")) {
             if (
                 checkbox.checked &&
                 $(checkbox).nextAll("input:checked").length < 5
+            ) {
+                checkbox.checked = false;
+                return false;
+            }
+        }
+
+        // Only allow lock to be selected if the last number has been selected
+        if ($(checkbox).next().hasClass("lock")) {
+            if (
+                checkbox.checked &&
+                $(checkbox).next().next().prop("checked") == false
             ) {
                 checkbox.checked = false;
                 return false;
